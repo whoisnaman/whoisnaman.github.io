@@ -85,28 +85,36 @@
     
     <div class="pl-8 sm:pl-16 relative z-10 space-y-32">
       
-      <!-- 1. Hero Section -->
-      <section class="portfolio-section relative is-active scroll-mt-32" data-section="hero" id="hero">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="max-w-3xl space-y-6">
-          <div class="inline-flex items-center gap-3 bg-neutral-100 dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-800 px-4 py-2 rounded-full shadow-inner">
-            <div class="flex items-center gap-2 text-sm font-mono text-neutral-600 dark:text-neutral-400" id="personaBadge">
-              <span id="personaLabel">Product Owner by Day</span>
-            </div>
-            <button aria-label="Toggle Theme Mode" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 transition-colors duration-200 ease-in-out focus:outline-none" id="themeToggleBtn" type="button">
-              <span class="translate-x-5 inline-block h-5 w-5 transform rounded-full bg-white dark:bg-neutral-100 shadow-md ring-0 transition duration-200 ease-in-out" id="toggleKnob"></span>
-            </button>
-            <div class="flex items-center gap-2 text-sm font-mono text-neutral-600 dark:text-neutral-400">
-              <span id="personaLabelNight">Designer by Night</span>
-            </div>
-          </div>
+    <!-- 1. Hero Section -->
+      <section class="portfolio-section relative is-active scroll-mt-32 pt-24 pb-16" data-section="hero" id="hero">
+        <!-- Spine Node -->
+        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-32 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
+        
+        <!-- Big Margins Container -->
+        <div class="max-w-5xl mx-auto pl-2 sm:px-12 md:px-20"> 
           
-          <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-neutral-900 dark:text-neutral-50 tracking-tight leading-[1.08]">
-            Architecting systems.<br/>
-            <span class="text-neutral-500 dark:text-neutral-400 font-medium">Delivering measurable value.</span>
+          <h1 class="text-6xl sm:text-7xl md:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05]">
+            <!-- Day Line -->
+            <div class="text-neutral-900 dark:text-neutral-700 transition-colors duration-500 mb-2">
+              Product Owner by Day,
+            </div>
+            
+            <!-- Night Line with Inline Toggle -->
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+              <div class="text-neutral-300 dark:text-neutral-50 transition-colors duration-500">
+                Designer by Night
+              </div>
+              
+              <!-- Giant Inline Toggle Switch -->
+              <button aria-label="Toggle Theme Mode" class="relative inline-flex h-12 w-24 sm:h-16 sm:w-32 shrink-0 cursor-pointer rounded-full border-2 border-neutral-200 dark:border-neutral-800 bg-neutral-200/50 dark:bg-neutral-800/50 backdrop-blur-md transition-colors duration-300 ease-in-out focus:outline-none mt-2 sm:mt-0 shadow-inner" id="themeToggleBtn" type="button">
+                <span class="translate-x-1.5 dark:translate-x-12 sm:dark:translate-x-[4.25rem] inline-block mt-[4px] ml-[2px] h-9 w-9 sm:h-13 sm:w-13 transform rounded-full bg-white dark:bg-neutral-200 shadow-md ring-0 transition duration-500 cubic-bezier(0.4, 0, 0.2, 1)" style="width: calc(100% / 2.3); height: calc(100% - 10px);" id="toggleKnob"></span>
+              </button>
+            </div>
           </h1>
-          <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed max-w-2xl">
-            Product Owner bridging human-centred discovery, physical engineering, and enterprise system architectures to solve complex bottleneck challenges.
+          
+          <!-- Subtitle pushed down slightly -->
+          <p class="mt-12 text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed max-w-2xl">
+            Bridging human-centred discovery, physical engineering, and enterprise system architectures to solve complex bottlenecks.
           </p>
         </div>
       </section>
