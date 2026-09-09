@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Naman Aggarwal | Product Owner</title>
+  <title>Naman Aggarwal — Product Owner</title>
   
   <!-- 7. Favicon Placeholder (Update href when ready) -->
   <link rel="icon" href="/favicon.png" type="image/png">
@@ -74,51 +74,48 @@
   <!-- Main Layout Container -->
   <main class="max-w-6xl mx-auto px-6 sm:px-12 pb-20 space-y-32">
     
-  <!-- 1. Hero Section: Correct Line Breaks, 1:2 Toggle Ratio, Exact Colours, Light Default -->
-    <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center pt-20 sm:pt-28">
-      
-      <!-- w-fit and mx-auto centre the block, while keeping it as tight as the longest text -->
-      <div class="flex flex-col w-fit mx-auto">
+  <!-- 1. Hero Section: Vertical Toggle Integration -->
+    <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center items-start pt-16">
+      <div class="flex flex-col w-full mx-auto">
         
-        <!-- Headline: Line 1 (Hello, I'm) and Line 2 (Naman Aggarwal) -->
-        <h1 class="text-[4rem] sm:text-[7rem] lg:text-[10rem] font-bold tracking-tighter leading-[1.0] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 w-full text-left">
+        <!-- Headline -->
+        <h1 class="text-[3.5rem] sm:text-7xl lg:text-[7.5rem] font-bold tracking-tight leading-[1.05] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 mb-8 lg:mb-12">
           Hello, I'm<br/>Naman Aggarwal
         </h1>
         
-        <!-- Bottom Row: Roles & Toggle (Strictly Right Aligned) -->
-        <div class="flex items-stretch justify-end gap-3 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 lg:mt-12 w-full">
+        <!-- Typographic Block & Vertical Toggle Wrapper -->
+        <div class="flex items-stretch gap-6 sm:gap-8 lg:gap-10">
           
-          <!-- Roles Block: Right Aligned Text, Height matches toggle exactly -->
-          <div class="flex flex-col justify-between text-right text-[2.25rem] sm:text-[4rem] lg:text-[6.25rem] font-bold leading-[0.9] tracking-tighter py-1 sm:py-2">
+          <!-- Roles Block -->
+          <div class="flex flex-col justify-between text-[2.5rem] sm:text-6xl lg:text-[5.5rem] font-bold leading-none tracking-tight py-1 sm:py-2 lg:py-3">
             
             <!-- Day Line -->
-            <div class="text-[#545454] dark:text-[#ABABAB] transition-colors duration-500 whitespace-nowrap">
+            <div class="text-[#a6a6a6] dark:text-[#d9d9d9] transition-colors duration-500 whitespace-nowrap">
               Product Owner by <span class="text-[#ffbd59] dark:text-[#ffffff] transition-colors duration-500">Day</span>
             </div>
             
             <!-- Night Line -->
-            <div class="text-[#545454] dark:text-[#ABABAB] transition-colors duration-500 whitespace-nowrap mt-4 sm:mt-6 lg:mt-8">
-              Designer by <span class="text-[#545454] dark:text-[#004aad] transition-colors duration-500">Night</span>
+            <div class="text-[#a6a6a6] dark:text-[#d9d9d9] transition-colors duration-500 whitespace-nowrap mt-4 sm:mt-8 lg:mt-10">
+              Designer by <span class="text-[#a6a6a6] dark:text-[#004aad] transition-colors duration-500">Night</span>
             </div>
           </div>
           
-          <!-- Vertical Toggle Track: 1:2 Ratio Width to Height -->
-          <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-6 sm:w-8 lg:w-10 h-12 sm:h-16 lg:h-20 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 border border-transparent dark:border-white/10">
+          <!-- Vertical Toggle -->
+          <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-16 sm:w-24 lg:w-32 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 shadow-inner block">
             
-            <!-- Knob: Dynamically sizing and moving based on padding to fit the 1:2 track -->
-            <div id="toggleKnob" class="absolute left-1 right-1 aspect-square rounded-full transition-all duration-500 top-1 dark:top-[calc(100%-1.5rem-0.25rem)] sm:dark:top-[calc(100%-2rem-0.25rem)] lg:dark:top-[calc(100%-2.5rem-0.25rem)] shadow-[0_2px_10px_rgba(0,0,0,0.2)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+            <!-- Sun / Moon Knob -->
+            <!-- The dark:top calculations mathematically guarantee it hits the absolute bottom padding regardless of text height -->
+            <div id="toggleKnob" class="absolute left-2 sm:left-2 lg:left-4 w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-md transition-all duration-500 top-2 sm:top-2 lg:top-4 dark:top-[calc(100%-3rem-0.5rem)] sm:dark:top-[calc(100%-5rem-0.5rem)] lg:dark:top-[calc(100%-6rem-1rem)]">
                
-               <!-- SUN: Simple, clean yellow circle -->
-               <div class="absolute inset-0 bg-[#ffbd59] rounded-full transition-opacity duration-500 dark:opacity-0"></div>
+               <!-- Sun Base -->
+               <div class="absolute inset-0 bg-[#ffbd59] transition-opacity duration-500 dark:opacity-0 flex items-center justify-center"></div>
                
-               <!-- MOON: Percentage-based freckles -->
-               <div class="absolute inset-0 bg-[#b8c5cd] rounded-full transition-opacity duration-500 opacity-0 dark:opacity-100 overflow-hidden">
-                 <div class="absolute w-[18%] h-[18%] bg-[#ccd6dd] rounded-full top-[15%] left-[20%]"></div>
-                 <div class="absolute w-[25%] h-[25%] bg-[#ccd6dd] rounded-full bottom-[15%] right-[15%]"></div>
-                 <div class="absolute w-[14%] h-[14%] bg-[#ccd6dd] rounded-full top-[45%] right-[15%]"></div>
-                 <div class="absolute w-[20%] h-[20%] bg-[#ccd6dd] rounded-full bottom-[35%] left-[12%]"></div>
-                 <div class="absolute w-[10%] h-[10%] bg-[#ccd6dd] rounded-full top-[25%] left-[50%]"></div>
-                 <div class="absolute w-[12%] h-[12%] bg-[#ccd6dd] rounded-full bottom-[20%] left-[45%]"></div>
+               <!-- Moon Base -->
+               <div class="absolute inset-0 bg-[#b8c5cd] transition-opacity duration-500 opacity-0 dark:opacity-100">
+                 <!-- Moon Craters -->
+                 <div class="absolute w-2 h-2 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-[#ccd6dd] rounded-full top-2 left-2 sm:top-3 sm:left-3 lg:top-5 lg:left-4 shadow-inner"></div>
+                 <div class="absolute w-3 h-3 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-[#ccd6dd] rounded-full bottom-2 right-1 sm:bottom-4 sm:right-3 lg:bottom-5 lg:right-4 shadow-inner"></div>
+                 <div class="absolute w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 bg-[#ccd6dd] rounded-full top-6 right-2 sm:top-9 sm:right-3 lg:top-12 lg:right-5 shadow-inner"></div>
                </div>
                
             </div>
