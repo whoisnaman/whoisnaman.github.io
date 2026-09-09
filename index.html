@@ -74,17 +74,17 @@
   <!-- Main Layout Container -->
   <main class="max-w-6xl mx-auto px-6 sm:px-12 pb-20 space-y-32">
     
-    <!-- 1. Hero Section: Full viewport height setup -->
+  <!-- 1. Hero Section: Full viewport height setup -->
     <section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-16">
-      <div class="max-w-4xl space-y-2">
+      <div class="space-y-4 w-full">
         
         <!-- Greeting -->
-        <p class="text-xl md:text-2xl font-medium text-neutral-500 dark:text-neutral-400 mb-4 tracking-tight">
+        <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-500 dark:text-neutral-400 mb-6 tracking-tight">
           Hi, I'm Naman Aggarwal.
         </p>
         
         <!-- Typographic Block: w-fit ensures the container is exactly as wide as the longest line -->
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-tight flex flex-col w-fit">
+        <h1 class="text-5xl sm:text-7xl md:text-[6.5rem] lg:text-[8.5rem] font-extrabold tracking-tighter leading-[1.02] flex flex-col w-fit">
           
           <!-- Day Line (This line dictates the total width) -->
           <div class="text-neutral-900 dark:text-neutral-700 transition-colors duration-500 whitespace-nowrap">
@@ -92,13 +92,14 @@
           </div>
           
           <!-- Night Line & Toggle: justify-between pushes the toggle flush to the right edge -->
-          <div class="flex items-center justify-between w-full mt-1 sm:mt-2">
+          <div class="flex items-center justify-between w-full mt-2 sm:mt-4">
             <span class="text-neutral-400 dark:text-neutral-50 transition-colors duration-500 whitespace-nowrap">
               Designer by Night
             </span>
             
-            <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative flex items-center w-14 h-7 sm:w-16 sm:h-8 px-1 ml-6 rounded-full bg-neutral-200 dark:bg-neutral-800 cursor-pointer transition-colors duration-300 focus:outline-none shrink-0">
-              <span id="toggleKnob" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white dark:bg-neutral-300 shadow-sm transform transition-transform duration-300 translate-x-0 dark:translate-x-7 sm:dark:translate-x-8"></span>
+            <!-- Scaled up toggle to match the massive text -->
+            <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative flex items-center w-16 h-8 sm:w-24 sm:h-12 lg:w-32 lg:h-16 px-1.5 ml-6 lg:ml-12 rounded-full bg-neutral-200 dark:bg-neutral-800 cursor-pointer transition-colors duration-300 focus:outline-none shrink-0">
+              <span id="toggleKnob" class="w-5 h-5 sm:w-9 sm:h-9 lg:w-13 lg:h-13 rounded-full bg-white dark:bg-neutral-300 shadow-sm transform transition-transform duration-300 translate-x-0 dark:translate-x-8 sm:dark:translate-x-12 lg:dark:translate-x-16" style="width: calc(100% / 2.3); height: calc(100% - 12px);"></span>
             </button>
           </div>
         </h1>
