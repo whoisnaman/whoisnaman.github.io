@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -29,49 +29,39 @@
     }
   </script>
   <style>
-    body, header, div, section, span, h1, h2, h3, p, a, button {
-      transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 200ms;
-    }
-    .portfolio-section.is-active .section-node {
-      background-color: #ffffff;
-      border-color: #ffffff;
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.4);
-      transform: scale(1.15);
-    }
-    html:not(.dark) .portfolio-section.is-active .section-node {
-      background-color: #171717;
-      border-color: #171717;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2);
-      transform: scale(1.15);
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-400 dark:bg-neutral-950 dark:text-neutral-400 selection:bg-neutral-800 selection:text-white min-h-screen relative overflow-x-hidden antialiased">
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-400 selection:bg-neutral-800 selection:text-white min-h-screen antialiased">
   
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none z-0 opacity-40 dark:opacity-25" style="background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 70%);"></div>
-  
-  <header class="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 py-4 backdrop-blur-xl bg-neutral-950/80 dark:bg-neutral-950/80 border-b border-neutral-800/80 dark:border-neutral-800/80">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a class="flex items-center gap-3 group" href="#hero">
-        <div class="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-100 text-neutral-950 font-bold text-xs flex items-center justify-center tracking-wider shadow-sm group-hover:bg-white transition-all">
+  <!-- Updated Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-neutral-950/90 border-b border-neutral-200 dark:border-neutral-800 backdrop-blur-md transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- Left: Square Logo & Position -->
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 rounded-md bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-sm flex items-center justify-center tracking-wider shadow-sm transition-colors">
           NA
         </div>
-        <div class="flex items-center gap-2">
-          <span class="text-sm font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight">Naman Aggarwal</span>
-          <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium" id="roleTag">
-            Designer
-          </span>
-        </div>
-      </a>
+        <span class="font-semibold text-sm text-neutral-900 dark:text-neutral-100 hidden sm:block tracking-tight">
+          Product Owner at IOSH
+        </span>
+      </div>
       
-      <div class="flex items-center gap-4">
-        <!-- Search Icon -->
+      <!-- Centre: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        <a href="#projects" class="hover:text-neutral-900 dark:hover:text-white transition-colors">Projects</a>
+        <a href="#case-studies" class="hover:text-neutral-900 dark:hover:text-white transition-colors">Case studies</a>
+        <a href="#footer" class="hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right: Icons -->
+      <div class="flex items-center gap-5">
         <button class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors" aria-label="Search">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
-        <!-- LinkedIn Icon -->
         <a href="https://linkedin.com" target="_blank" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors" aria-label="LinkedIn">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
         </a>
@@ -79,363 +69,281 @@
     </div>
   </header>
 
-  <main class="relative max-w-6xl mx-auto px-6 sm:px-12 pt-28 pb-20">
-    <!-- Continuous Vertical Roadmap Spine -->
-    <div class="absolute top-36 bottom-20 left-6 sm:left-12 w-px border-l-2 border-dashed border-neutral-300 dark:border-neutral-800/80 pointer-events-none z-0"></div>
+  <!-- Main Layout Container -->
+  <main class="max-w-6xl mx-auto px-6 sm:px-12 pt-32 pb-20 space-y-32">
     
-    <div class="pl-8 sm:pl-16 relative z-10 space-y-32">
-      
     <!-- 1. Hero Section -->
-      <section class="portfolio-section relative is-active scroll-mt-32 pt-24 pb-16" data-section="hero" id="hero">
-        <!-- Spine Node -->
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-32 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
+    <section id="hero">
+      <div class="max-w-4xl space-y-4">
         
-        <!-- Big Margins Container -->
-        <div class="max-w-5xl mx-auto pl-2 sm:px-12 md:px-20"> 
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-tight">
+          <!-- Day Line -->
+          <div class="text-neutral-900 dark:text-neutral-700 transition-colors duration-500 whitespace-nowrap">
+            Product Owner by Day,
+          </div>
           
-          <h1 class="text-6xl sm:text-7xl md:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05]">
-            <!-- Day Line -->
-            <div class="text-neutral-900 dark:text-neutral-700 transition-colors duration-500 mb-2">
-              Product Owner by Day,
-            </div>
+          <!-- Night Line & Toggle -->
+          <div class="flex items-center gap-4 sm:gap-6 mt-1 sm:mt-2">
+            <span class="text-neutral-400 dark:text-neutral-50 transition-colors duration-500 whitespace-nowrap">
+              Designer by Night
+            </span>
             
-            <!-- Night Line with Inline Toggle -->
-            <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-              <div class="text-neutral-300 dark:text-neutral-50 transition-colors duration-500">
-                Designer by Night
-              </div>
-              
-              <!-- Giant Inline Toggle Switch -->
-              <button aria-label="Toggle Theme Mode" class="relative inline-flex h-12 w-24 sm:h-16 sm:w-32 shrink-0 cursor-pointer rounded-full border-2 border-neutral-200 dark:border-neutral-800 bg-neutral-200/50 dark:bg-neutral-800/50 backdrop-blur-md transition-colors duration-300 ease-in-out focus:outline-none mt-2 sm:mt-0 shadow-inner" id="themeToggleBtn" type="button">
-                <span class="translate-x-1.5 dark:translate-x-12 sm:dark:translate-x-[4.25rem] inline-block mt-[4px] ml-[2px] h-9 w-9 sm:h-13 sm:w-13 transform rounded-full bg-white dark:bg-neutral-200 shadow-md ring-0 transition duration-500 cubic-bezier(0.4, 0, 0.2, 1)" style="width: calc(100% / 2.3); height: calc(100% - 10px);" id="toggleKnob"></span>
-              </button>
-            </div>
-          </h1>
-          
-          <!-- Subtitle pushed down slightly -->
-          <p class="mt-12 text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 font-normal leading-relaxed max-w-2xl">
-            Bridging human-centred discovery, physical engineering, and enterprise system architectures to solve complex bottlenecks.
-          </p>
-        </div>
-      </section>
+            <!-- Simple, Robust Toggle Switch -->
+            <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative flex items-center w-16 h-8 sm:w-20 sm:h-10 px-1 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 cursor-pointer transition-colors duration-300 focus:outline-none">
+              <span id="toggleKnob" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white dark:bg-neutral-300 shadow-sm transform transition-transform duration-300 translate-x-0 dark:translate-x-8 sm:dark:translate-x-10"></span>
+            </button>
+          </div>
+        </h1>
+        
+        <p class="mt-8 text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl pt-6">
+          Bridging human-centred discovery, physical engineering, and enterprise system architectures to solve complex bottlenecks.
+        </p>
+      </div>
+    </section>
 
-      <!-- 2. Methodology Section -->
-      <section class="portfolio-section relative scroll-mt-32" data-section="methodology" id="methodology">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="space-y-3 mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// METHODOLOGY</span>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Human First, Product Second</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <!-- Step 1 -->
-          <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md group">
-            <div class="space-y-4">
-              <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">01</span>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Human Insight</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Uncovering latent user frictions and operational bottlenecks through deep contextual inquiry.</p>
-            </div>
-          </div>
-          <!-- Step 2 -->
-          <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md group">
-            <div class="space-y-4">
-              <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">02</span>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Product Decision</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Prioritising trade-offs by business value, feasibility, and long-term architectural scaling.</p>
-            </div>
-          </div>
-          <!-- Step 3 -->
-          <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md group">
-            <div class="space-y-4">
-              <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">03</span>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Business Outcome</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Validating execution through measurable enterprise metrics and continuous delivery cycles.</p>
-            </div>
+    <!-- 2. Methodology Section -->
+    <section id="methodology">
+      <div class="space-y-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// METHODOLOGY</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Human First, Product Second</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Step 1 -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <div class="space-y-4">
+            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">01</span>
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Human Insight</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Uncovering latent user frictions and operational bottlenecks through deep contextual inquiry.</p>
           </div>
         </div>
-      </section>
+        <!-- Step 2 -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <div class="space-y-4">
+            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">02</span>
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Product Decision</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Prioritising trade-offs by business value, feasibility, and long-term architectural scaling.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <div class="space-y-4">
+            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">03</span>
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">Business Outcome</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Validating execution through measurable enterprise metrics and continuous delivery cycles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- 3. Case Studies Section -->
-      <section class="portfolio-section relative scroll-mt-32" data-section="case-studies" id="case-studies">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="space-y-3 mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// STRATEGY &amp; DEEP DIVES</span>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Case Studies</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <!-- Case 1: D365 -->
-          <div class="flex flex-col justify-between p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md hover:border-neutral-300 dark:hover:border-neutral-700 transition-all cursor-pointer">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="font-mono text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200">Shipped</span>
-                <span class="font-mono text-xs text-neutral-500">2026</span>
+    <!-- 3. Case Studies Section -->
+    <section id="case-studies">
+      <div class="space-y-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// STRATEGY & DEEP DIVES</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Case Studies</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Case 1: D365 -->
+        <div class="flex flex-col justify-between p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 hover:border-neutral-400 transition-colors cursor-pointer">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200">Shipped</span>
+              <span class="font-mono text-xs text-neutral-500">2026</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Enterprise Workflow Automation</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">End-to-end operational backlog prioritisation and process overhaul for enterprise delivery systems across Dynamics 365 and Power BI.</p>
+            
+            <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 my-4">
+              <div>
+                <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">+34%</div>
+                <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Efficiency Gain</div>
               </div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Enterprise Workflow Automation</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">End-to-end operational backlog prioritisation and process overhaul for enterprise delivery systems across Dynamics 365 and Power BI.</p>
-              
-              <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 my-4">
-                <div>
-                  <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">+34%</div>
-                  <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Efficiency Gain</div>
-                </div>
-                <div>
-                  <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">50+</div>
-                  <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Items Optimised</div>
-                </div>
+              <div>
+                <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">50+</div>
+                <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Items Optimised</div>
               </div>
             </div>
-            <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between text-xs">
-              <span class="text-neutral-500 font-mono">D365 • Power BI • Power Automate</span>
-              <span class="font-medium text-neutral-900 dark:text-neutral-200">View Case Study →</span>
-            </div>
           </div>
+          <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+            <span class="text-neutral-500 font-mono">D365 • Power BI</span>
+            <span class="font-medium text-neutral-900 dark:text-neutral-200">View Case Study →</span>
+          </div>
+        </div>
 
-          <!-- Case 2: MBA Thesis -->
-          <div class="flex flex-col justify-between p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md hover:border-neutral-300 dark:hover:border-neutral-700 transition-all cursor-pointer">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="font-mono text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200">Academic / MBA</span>
-                <span class="font-mono text-xs text-neutral-500">Loughborough</span>
+        <!-- Case 2: MBA Thesis -->
+        <div class="flex flex-col justify-between p-7 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 hover:border-neutral-400 transition-colors cursor-pointer">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200">Academic / MBA</span>
+              <span class="font-mono text-xs text-neutral-500">Loughborough</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Smartphone Supply Chain Optimisation</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Mathematical modelling and lean inventory strategies targeting high-turnover consumer electronics life cycles and distribution.</p>
+            
+            <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 my-4">
+              <div>
+                <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">-15%</div>
+                <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Holding Cost (Modelled)</div>
               </div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Smartphone Supply Chain Optimisation</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">Mathematical modelling and lean inventory strategies targeting high-turnover consumer electronics life cycles and distribution.</p>
-              
-              <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 my-4">
-                <div>
-                  <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">-15%</div>
-                  <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Holding Cost (Modelled)</div>
-                </div>
-                <div>
-                  <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">4.2wks</div>
-                  <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Lead Time Reduction</div>
-                </div>
+              <div>
+                <div class="font-mono text-xl font-bold text-neutral-900 dark:text-neutral-100">4.2wks</div>
+                <div class="text-[11px] text-neutral-500 uppercase mt-0.5">Lead Time Reduction</div>
               </div>
             </div>
-            <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between text-xs">
-              <span class="text-neutral-500 font-mono">Academic Research • Supply Chain</span>
-              <span class="font-medium text-neutral-900 dark:text-neutral-200">View Case Study →</span>
+          </div>
+          <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+            <span class="text-neutral-500 font-mono">Academic Research</span>
+            <span class="font-medium text-neutral-900 dark:text-neutral-200">View Case Study →</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Projects Section -->
+    <section id="projects">
+      <div class="space-y-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// TANGIBLE DELIVERABLES</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Projects & Hardware</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Project 1 -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 cursor-pointer hover:border-neutral-400 transition-colors">
+          <div>
+            <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
+              <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Patented</span>
+              <span class="text-sm font-mono text-neutral-500">Blueprint Visual</span>
             </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">Self-Levelling Walking Stick</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Engineered biomechanical mobility aid featuring automatic multi-axis terrain adaptation. Patent No. 344542-001.</p>
           </div>
-
+          <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">CAD</span>
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">PLA 3D Printing</span>
+          </div>
         </div>
-      </section>
 
-      <!-- 4. Projects Section -->
-      <section class="portfolio-section relative scroll-mt-32" data-section="projects" id="projects">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="space-y-3 mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// TANGIBLE DELIVERABLES</span>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Projects &amp; Hardware</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          
-          <!-- Project 1 -->
-          <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md cursor-pointer hover:border-neutral-400 transition-colors">
-            <div>
-              <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
-                <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Patented</span>
-                <span class="text-sm font-mono text-neutral-500">Blueprint Visual</span>
-              </div>
-              <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">Self-Levelling Walking Stick</h3>
-              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Engineered biomechanical mobility aid featuring automatic multi-axis terrain adaptation. Patent No. 344542-001.</p>
+        <!-- Project 2 -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 cursor-pointer hover:border-neutral-400 transition-colors">
+          <div>
+            <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
+              <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Production</span>
+              <span class="text-sm font-mono text-neutral-500">Storefront Visual</span>
             </div>
-            <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">CAD</span>
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">PLA 3D Printing</span>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">DARPAN by Usha</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Custom, lightweight e-commerce platform built natively to streamline operations for a couture tailoring brand.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">HTML/CSS/JS</span>
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Cloudflare</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 cursor-pointer hover:border-neutral-400 transition-colors">
+          <div>
+            <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
+              <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Tooling</span>
+              <span class="text-sm font-mono text-neutral-500">Macro Visual</span>
             </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">VBA Resume Automation</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Macro-driven single-page CV compiler tailoring work history to specific ATS requirements in seconds.</p>
           </div>
-
-          <!-- Project 2 -->
-          <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md cursor-pointer hover:border-neutral-400 transition-colors">
-            <div>
-              <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
-                <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Production</span>
-                <span class="text-sm font-mono text-neutral-500">Storefront Visual</span>
-              </div>
-              <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">DARPAN by Usha</h3>
-              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Custom, lightweight e-commerce platform built natively to streamline operations for a couture tailoring brand.</p>
-            </div>
-            <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">HTML/CSS/JS</span>
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Cloudflare</span>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="flex flex-col justify-between p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md cursor-pointer hover:border-neutral-400 transition-colors">
-            <div>
-              <div class="relative w-full h-36 rounded-xl bg-neutral-100 dark:bg-neutral-950/80 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center mb-4 overflow-hidden">
-                <span class="absolute top-2 right-2 font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-850 text-neutral-700 dark:text-neutral-300">Tooling</span>
-                <span class="text-sm font-mono text-neutral-500">Macro Visual</span>
-              </div>
-              <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">VBA Resume Automation Engine</h3>
-              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">Macro-driven single-page CV compiler tailoring work history to specific ATS requirements in seconds.</p>
-            </div>
-            <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Word VBA</span>
-              <span class="px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Process Automation</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 5. Tech Stack Section -->
-      <section class="portfolio-section relative scroll-mt-32" data-section="tech-stack" id="tech-stack">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="space-y-3 mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// INFRASTRUCTURE</span>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Technical Pillars</h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <!-- Pillar 1 -->
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md">
-            <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Product &amp; Delivery</h3>
-            <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
-              <li>Jira</li>
-              <li>Asana</li>
-              <li>Agile/Scrum</li>
-              <li>User Research</li>
-            </ul>
-          </div>
-          <!-- Pillar 2 -->
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md">
-            <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Data &amp; Automation</h3>
-            <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
-              <li>Power BI</li>
-              <li>Power Automate</li>
-              <li>Dynamics 365</li>
-              <li>DAX</li>
-            </ul>
-          </div>
-          <!-- Pillar 3 -->
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md">
-            <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Design &amp; AI Prototyping</h3>
-            <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
-              <li>Figma</li>
-              <li>Cursor</li>
-              <li>Claude Code</li>
-              <li>Copilot</li>
-            </ul>
-          </div>
-          <!-- Pillar 4 -->
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md">
-            <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Physical Hardware</h3>
-            <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
-              <li>Mechanical CAD</li>
-              <li>PLA 3D Printing</li>
-              <li>DFM Strategy</li>
-            </ul>
+          <div class="pt-4 mt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Word VBA</span>
+            <span class="px-2 py-0.5 rounded bg-neutral-50 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300">Automation</span>
           </div>
         </div>
-      </section>
 
-      <!-- 6. Testimonials Section -->
-      <section class="portfolio-section relative scroll-mt-32" data-section="testimonials" id="testimonials">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-1.5 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="space-y-3 mb-10">
-          <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// VALIDATION</span>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Testimonials</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md italic text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            "A brilliant blend of technical execution and strategic oversight. The automated workflows dramatically cut down our process times."
-            <div class="mt-4 text-xs font-semibold not-italic text-neutral-900 dark:text-neutral-200">— Senior Colleague, via LinkedIn</div>
-          </div>
-          <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/60 backdrop-blur-md italic text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            "Brings a human-first approach to complex hardware and software problems, balancing both sides perfectly to deliver real value."
-            <div class="mt-4 text-xs font-semibold not-italic text-neutral-900 dark:text-neutral-200">— Stakeholder, via LinkedIn</div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 7. Footer -->
-      <footer class="portfolio-section relative scroll-mt-32 pt-12 border-t border-neutral-200 dark:border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-6" id="footer">
-        <div class="section-node absolute -left-[41px] sm:-left-[73px] top-14 w-4 h-4 rounded-full border-2 border-neutral-400 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-950 transition-all duration-300 z-10"></div>
-        <div class="flex flex-wrap items-center gap-6 text-sm">
-          <span class="font-medium text-neutral-900 dark:text-neutral-200">Open to Product Owner roles</span>
-          <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white transition-colors" href="mailto:hello@example.com">Email</a>
-          <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white transition-colors" href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white transition-colors" href="#">Download CV</a>
+    <!-- 5. Tech Stack Section -->
+    <section id="tech-stack">
+      <div class="space-y-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// INFRASTRUCTURE</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Technical Pillars</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Product & Delivery</h3>
+          <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
+            <li>Jira</li>
+            <li>Asana</li>
+            <li>Agile/Scrum</li>
+            <li>User Research</li>
+          </ul>
         </div>
-        <p class="font-mono text-xs text-neutral-500">© 2026 Naman Aggarwal.</p>
-      </footer>
-    </div>
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Data & Automation</h3>
+          <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
+            <li>Power BI</li>
+            <li>Power Automate</li>
+            <li>Dynamics 365</li>
+            <li>DAX</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Design & AI Prototyping</h3>
+          <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
+            <li>Figma</li>
+            <li>Cursor</li>
+            <li>Claude Code</li>
+            <li>Copilot</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 transition-colors">
+          <h3 class="font-bold text-sm text-neutral-900 dark:text-neutral-100 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">Physical Hardware</h3>
+          <ul class="space-y-3 text-xs text-neutral-700 dark:text-neutral-300">
+            <li>Mechanical CAD</li>
+            <li>PLA 3D Printing</li>
+            <li>DFM Strategy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section id="testimonials">
+      <div class="space-y-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">// VALIDATION</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Testimonials</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 italic text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
+          "A brilliant blend of technical execution and strategic oversight. The automated workflows dramatically cut down our process times."
+          <div class="mt-4 text-xs font-semibold not-italic text-neutral-900 dark:text-neutral-200">— Senior Colleague, via LinkedIn</div>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 italic text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
+          "Brings a human-first approach to complex hardware and software problems, balancing both sides perfectly to deliver real value."
+          <div class="mt-4 text-xs font-semibold not-italic text-neutral-900 dark:text-neutral-200">— Stakeholder, via LinkedIn</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer id="footer" class="pt-12 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-6 transition-colors">
+      <div class="flex flex-wrap items-center gap-6 text-sm">
+        <span class="font-medium text-neutral-900 dark:text-neutral-200">Open to Product Owner roles</span>
+        <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors" href="mailto:hello@example.com">Email</a>
+        <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors" href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors" href="#">Download CV</a>
+      </div>
+      <p class="font-mono text-xs text-neutral-500">© 2026 Naman Aggarwal.</p>
+    </footer>
+    
   </main>
 
   <script>
+    // Simplified, fail-proof toggle logic
     document.addEventListener('DOMContentLoaded', () => {
       const htmlEl = document.documentElement;
       const themeToggleBtn = document.getElementById('themeToggleBtn');
-      const toggleKnob = document.getElementById('toggleKnob');
-      const roleTag = document.getElementById('roleTag');
       
-      const labelPO = document.getElementById('personaLabel');
-      const labelDesigner = document.getElementById('personaLabelNight');
-
-      let isDark = true; // Default
-
-      function renderTheme() {
-        if (isDark) {
-          htmlEl.classList.add('dark');
-          toggleKnob.classList.remove('translate-x-0.5');
-          toggleKnob.classList.add('translate-x-5');
-          
-          labelPO.classList.add('opacity-50');
-          labelDesigner.classList.remove('opacity-50');
-          roleTag.textContent = 'Designer';
-          
-          document.body.classList.remove('bg-neutral-50', 'text-neutral-800');
-          document.body.classList.add('bg-neutral-950', 'text-neutral-400');
-        } else {
-          htmlEl.classList.remove('dark');
-          toggleKnob.classList.remove('translate-x-5');
-          toggleKnob.classList.add('translate-x-0.5');
-          
-          labelPO.classList.remove('opacity-50');
-          labelDesigner.classList.add('opacity-50');
-          roleTag.textContent = 'Product Owner';
-          
-          document.body.classList.remove('bg-neutral-950', 'text-neutral-400');
-          document.body.classList.add('bg-neutral-50', 'text-neutral-800');
-        }
-      }
-
       themeToggleBtn.addEventListener('click', () => {
-        isDark = !isDark;
-        renderTheme();
+        htmlEl.classList.toggle('dark');
       });
-
-      // Scroll Spy for Roadmap Spine Node Markers
-      const sections = document.querySelectorAll('.portfolio-section');
-      function onScroll() {
-        const scrollPosition = window.scrollY + 200;
-        let currentSection = null;
-
-        sections.forEach((sec) => {
-          const top = sec.offsetTop;
-          const height = sec.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            currentSection = sec;
-          }
-        });
-
-        if (!currentSection && window.scrollY < 300) {
-          currentSection = sections[0];
-        }
-
-        sections.forEach((sec) => {
-          if (sec === currentSection) {
-            sec.classList.add('is-active');
-          } else {
-            sec.classList.remove('is-active');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      renderTheme();
-      onScroll();
     });
   </script>
 </body>
