@@ -74,20 +74,22 @@
   <!-- Main Layout Container -->
   <main class="max-w-6xl mx-auto px-6 sm:px-12 pb-20 space-y-32">
     
-  <!-- 1. Hero Section: Vertical Toggle Integration -->
-    <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center items-start pt-16">
-      <div class="flex flex-col w-full mx-auto">
+  <!-- 1. Hero Section: Precision Alignment & Enhanced Toggle Shadows -->
+    <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center pt-16 sm:pt-24">
+      
+      <!-- w-fit mx-auto locks the entire block into the center, whilst maintaining strict internal alignment -->
+      <div class="flex flex-col w-fit mx-auto">
         
-        <!-- Headline -->
-        <h1 class="text-[3.5rem] sm:text-7xl lg:text-[7.5rem] font-bold tracking-tight leading-[1.05] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 mb-8 lg:mb-12">
+        <!-- Headline: Strictly Left Aligned -->
+        <h1 class="text-[3rem] sm:text-[5.5rem] lg:text-[7.5rem] font-bold tracking-tight leading-[1.05] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 w-full text-left">
           Hello, I'm<br/>Naman Aggarwal
         </h1>
         
-        <!-- Typographic Block & Vertical Toggle Wrapper -->
-        <div class="flex items-stretch gap-6 sm:gap-8 lg:gap-10">
+        <!-- Bottom Row: Roles & Toggle (Strictly Right Aligned to the edge of the h1) -->
+        <div class="flex items-stretch justify-end gap-5 sm:gap-8 lg:gap-10 mt-6 sm:mt-10 lg:mt-12 w-full pr-1">
           
-          <!-- Roles Block -->
-          <div class="flex flex-col justify-between text-[2.5rem] sm:text-6xl lg:text-[5.5rem] font-bold leading-none tracking-tight py-1 sm:py-2 lg:py-3">
+          <!-- Roles Block: Strictly Right Aligned Text -->
+          <div class="flex flex-col justify-between text-right text-[2rem] sm:text-[3.5rem] lg:text-[5rem] font-bold leading-none tracking-tight py-1 sm:py-2 lg:py-3">
             
             <!-- Day Line -->
             <div class="text-[#a6a6a6] dark:text-[#d9d9d9] transition-colors duration-500 whitespace-nowrap">
@@ -100,22 +102,35 @@
             </div>
           </div>
           
-          <!-- Vertical Toggle -->
-          <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-16 sm:w-24 lg:w-32 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 shadow-inner block">
+          <!-- Vertical Toggle Track (With Inner Shadow) -->
+          <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-16 sm:w-24 lg:w-32 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 shadow-[inset_0_4px_8px_rgba(0,0,0,0.15)] dark:shadow-[inset_0_6px_12px_rgba(0,0,0,0.4)] block border border-transparent dark:border-white/10">
             
-            <!-- Sun / Moon Knob -->
+            <!-- Knob Container (With Outer Shadow for Depth) -->
             <!-- The dark:top calculations mathematically guarantee it hits the absolute bottom padding regardless of text height -->
-            <div id="toggleKnob" class="absolute left-2 sm:left-2 lg:left-4 w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-md transition-all duration-500 top-2 sm:top-2 lg:top-4 dark:top-[calc(100%-3rem-0.5rem)] sm:dark:top-[calc(100%-5rem-0.5rem)] lg:dark:top-[calc(100%-6rem-1rem)]">
+            <div id="toggleKnob" class="absolute left-2 sm:left-2 lg:left-4 w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full transition-all duration-500 top-2 sm:top-2 lg:top-4 dark:top-[calc(100%-3rem-0.5rem)] sm:dark:top-[calc(100%-5rem-0.5rem)] lg:dark:top-[calc(100%-6rem-1rem)] shadow-[0_4px_10px_rgba(0,0,0,0.2)] dark:shadow-[0_6px_14px_rgba(0,0,0,0.5)]">
                
-               <!-- Sun Base -->
-               <div class="absolute inset-0 bg-[#ffbd59] transition-opacity duration-500 dark:opacity-0 flex items-center justify-center"></div>
+               <!-- SUN DESIGN (Light Mode) -->
+               <div class="absolute inset-0 transition-opacity duration-500 dark:opacity-0 flex items-center justify-center">
+                 <!-- Sun Rays (Extending outside the core) -->
+                 <div class="absolute w-[130%] h-[130%] flex items-center justify-center animate-[spin_20s_linear_infinite]">
+                   <div class="absolute w-[12%] h-full bg-[#ffbd59] rounded-full rotate-0"></div>
+                   <div class="absolute w-[12%] h-full bg-[#ffbd59] rounded-full rotate-45"></div>
+                   <div class="absolute w-[12%] h-full bg-[#ffbd59] rounded-full rotate-90"></div>
+                   <div class="absolute w-[12%] h-full bg-[#ffbd59] rounded-full rotate-[135deg]"></div>
+                 </div>
+                 <!-- Sun Core -->
+                 <div class="absolute inset-0 bg-[#ffbd59] rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)]"></div>
+               </div>
                
-               <!-- Moon Base -->
-               <div class="absolute inset-0 bg-[#b8c5cd] transition-opacity duration-500 opacity-0 dark:opacity-100">
-                 <!-- Moon Craters -->
-                 <div class="absolute w-2 h-2 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-[#ccd6dd] rounded-full top-2 left-2 sm:top-3 sm:left-3 lg:top-5 lg:left-4 shadow-inner"></div>
-                 <div class="absolute w-3 h-3 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-[#ccd6dd] rounded-full bottom-2 right-1 sm:bottom-4 sm:right-3 lg:bottom-5 lg:right-4 shadow-inner"></div>
-                 <div class="absolute w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 bg-[#ccd6dd] rounded-full top-6 right-2 sm:top-9 sm:right-3 lg:top-12 lg:right-5 shadow-inner"></div>
+               <!-- MOON DESIGN (Dark Mode) -->
+               <div class="absolute inset-0 bg-[#b8c5cd] rounded-full transition-opacity duration-500 opacity-0 dark:opacity-100 overflow-hidden shadow-[inset_-2px_-2px_6px_rgba(0,0,0,0.15)]">
+                 <!-- Enhanced Craters / Freckles -->
+                 <div class="absolute w-2 h-2 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-[#ccd6dd] rounded-full top-2 left-2 sm:top-3 sm:left-3 lg:top-4 lg:left-4 shadow-[inset_1px_1px_3px_rgba(0,0,0,0.15)]"></div>
+                 <div class="absolute w-3 h-3 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-[#ccd6dd] rounded-full bottom-2 right-1 sm:bottom-4 sm:right-3 lg:bottom-4 lg:right-3 shadow-[inset_1px_1px_3px_rgba(0,0,0,0.15)]"></div>
+                 <div class="absolute w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 bg-[#ccd6dd] rounded-full top-5 right-2 sm:top-8 sm:right-3 lg:top-10 lg:right-4 shadow-[inset_1px_1px_2px_rgba(0,0,0,0.15)]"></div>
+                 <div class="absolute w-1.5 h-1.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-[#ccd6dd] rounded-full bottom-5 left-1 sm:bottom-8 left-2 lg:bottom-10 lg:left-3 shadow-[inset_1px_1px_2px_rgba(0,0,0,0.15)]"></div>
+                 <div class="absolute w-1 h-1 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-[#ccd6dd] rounded-full top-7 left-6 sm:top-10 sm:left-10 lg:top-14 lg:left-12 shadow-[inset_1px_1px_1px_rgba(0,0,0,0.15)]"></div>
+                 <div class="absolute w-2 h-2 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5 bg-[#ccd6dd] rounded-full bottom-2 left-4 sm:bottom-3 sm:left-8 lg:bottom-3 lg:left-10 shadow-[inset_1px_1px_2px_rgba(0,0,0,0.15)]"></div>
                </div>
                
             </div>
