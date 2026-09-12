@@ -78,159 +78,157 @@
     </div>
   </header>
 
-  <!-- Main Layout Container -->
-    <main class="w-fit mx-auto flex flex-col w-full max-w-[70vw] px-4 sm:px-6 lg:px-0">
+  <!-- Main Layout Container: Strictly w-fit so it locks to the widest child (the Hero text) -->
+<main class="w-fit mx-auto flex flex-col px-4 sm:px-6 lg:px-0">
       
-      
-
   <!-- 1. Hero Section: Exact W-16/24/32 Toggle & Scaled Typography -->
-    <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center items-start pt-16 sm:pt-24">
+  <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center items-start pt-16 sm:pt-24">
+    
+    <!-- Container locked to max width of the content -->
+    <div class="flex flex-col w-fit mx-auto">
       
-      <!-- Container locked to max width of the content -->
-      <div class="flex flex-col w-fit mx-auto">
+      <!-- Headline -->
+      <h1 class="text-[4.5rem] sm:text-[7.5rem] lg:text-[10.5rem] font-bold tracking-tight leading-[1.0] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 w-full text-left">
+        Hello, I'm<br/>
+        <span class="whitespace-nowrap">Naman Aggarwal</span>
+      </h1>
+      
+      <!-- Bottom Row -->
+      <div class="flex items-stretch justify-end gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 lg:mt-12 w-full">
         
-        <!-- Headline -->
-        <h1 class="text-[4.5rem] sm:text-[7.5rem] lg:text-[10.5rem] font-bold tracking-tight leading-[1.0] text-[#000000] dark:text-[#ffffff] transition-colors duration-500 w-full text-left">
-          Hello, I'm<br/>
-          <span class="whitespace-nowrap">Naman Aggarwal</span>
-        </h1>
-        
-        <!-- Bottom Row -->
-        <div class="flex items-stretch justify-end gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 lg:mt-12 w-full">
+        <!-- Roles Block -->
+        <div class="flex flex-col justify-between text-right w-full text-[2.75rem] sm:text-[4.5rem] lg:text-[6.75rem] font-bold leading-[0.95] tracking-tighter py-1 lg:py-2">
           
-          <!-- Roles Block -->
-          <div class="flex flex-col justify-between text-right w-full text-[2.75rem] sm:text-[4.5rem] lg:text-[6.75rem] font-bold leading-[0.95] tracking-tighter py-1 lg:py-2">
-            
-            <!-- Day Line -->
-            <div class="text-[#545454] dark:text-[#ababab] transition-colors duration-500 whitespace-nowrap">
-              Product Owner by <span class="text-[#ffbd59] dark:text-[#ffffff] transition-colors duration-500">Day</span>
-            </div>
-            
-            <!-- Night Line -->
-            <div class="text-[#545454] dark:text-[#ababab] transition-colors duration-500 whitespace-nowrap mt-4 sm:mt-6 lg:mt-8">
-              Designer by <span class="text-[#545454] dark:text-[#004aad] transition-colors duration-500">Night</span>
-            </div>
+          <!-- Day Line -->
+          <div class="text-[#545454] dark:text-[#ababab] transition-colors duration-500 whitespace-nowrap">
+            Product Owner by <span class="text-[#ffbd59] dark:text-[#ffffff] transition-colors duration-500">Day</span>
           </div>
           
-          <!-- Vertical Toggle (w-16, w-24, w-32 maintaining 1:2 height) -->
-          <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-16 h-32 sm:w-24 sm:h-48 lg:w-32 lg:h-64 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 border border-transparent dark:border-white/10">
-            
-            <!-- Knob: Meticulously calculated to sit perfectly within the new dimensions -->
-            <div id="toggleKnob" class="absolute aspect-square rounded-full overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.2)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.6)] transition-all duration-500 
-                 w-12 h-12 left-2 top-2 dark:top-[calc(100%-3rem-0.5rem)] 
-                 sm:w-20 sm:h-20 sm:left-2 sm:top-2 sm:dark:top-[calc(100%-5rem-0.5rem)] 
-                 lg:w-24 lg:h-24 lg:left-4 lg:top-4 lg:dark:top-[calc(100%-6rem-1rem)]">
-               
-               <!-- Sun Base -->
-               <div class="absolute inset-0 bg-[#ffbd59] transition-opacity duration-500 dark:opacity-0 flex items-center justify-center"></div>
-               
-               <!-- Moon Base -->
-               <div class="absolute inset-0 bg-[#b8c5cd] transition-opacity duration-500 opacity-0 dark:opacity-100">
-                 <div class="absolute w-[18%] h-[18%] bg-[#ccd6dd] rounded-full top-[15%] left-[20%]"></div>
-                 <div class="absolute w-[25%] h-[25%] bg-[#ccd6dd] rounded-full bottom-[15%] right-[15%]"></div>
-                 <div class="absolute w-[14%] h-[14%] bg-[#ccd6dd] rounded-full top-[45%] right-[15%]"></div>
-                 <div class="absolute w-[20%] h-[20%] bg-[#ccd6dd] rounded-full bottom-[35%] left-[12%]"></div>
-                 <div class="absolute w-[10%] h-[10%] bg-[#ccd6dd] rounded-full top-[25%] left-[50%]"></div>
-               </div>
-               
-            </div>
-          </button>
+          <!-- Night Line -->
+          <div class="text-[#545454] dark:text-[#ababab] transition-colors duration-500 whitespace-nowrap mt-4 sm:mt-6 lg:mt-8">
+            Designer by <span class="text-[#545454] dark:text-[#004aad] transition-colors duration-500">Night</span>
+          </div>
         </div>
         
+        <!-- Vertical Toggle (w-16, w-24, w-32 maintaining 1:2 height) -->
+        <button id="themeToggleBtn" aria-label="Toggle Theme Mode" class="relative w-16 h-32 sm:w-24 sm:h-48 lg:w-32 lg:h-64 rounded-full bg-[#72cbff] dark:bg-[#004aad] cursor-pointer transition-colors duration-500 focus:outline-none shrink-0 border border-transparent dark:border-white/10">
+          
+          <!-- Knob: Meticulously calculated to sit perfectly within the new dimensions -->
+          <div id="toggleKnob" class="absolute aspect-square rounded-full overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.2)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.6)] transition-all duration-500 
+               w-12 h-12 left-2 top-2 dark:top-[calc(100%-3rem-0.5rem)] 
+               sm:w-20 sm:h-20 sm:left-2 sm:top-2 sm:dark:top-[calc(100%-5rem-0.5rem)] 
+               lg:w-24 lg:h-24 lg:left-4 lg:top-4 lg:dark:top-[calc(100%-6rem-1rem)]">
+             
+             <!-- Sun Base -->
+             <div class="absolute inset-0 bg-[#ffbd59] transition-opacity duration-500 dark:opacity-0 flex items-center justify-center"></div>
+             
+             <!-- Moon Base -->
+             <div class="absolute inset-0 bg-[#b8c5cd] transition-opacity duration-500 opacity-0 dark:opacity-100">
+               <div class="absolute w-[18%] h-[18%] bg-[#ccd6dd] rounded-full top-[15%] left-[20%]"></div>
+               <div class="absolute w-[25%] h-[25%] bg-[#ccd6dd] rounded-full bottom-[15%] right-[15%]"></div>
+               <div class="absolute w-[14%] h-[14%] bg-[#ccd6dd] rounded-full top-[45%] right-[15%]"></div>
+               <div class="absolute w-[20%] h-[20%] bg-[#ccd6dd] rounded-full bottom-[35%] left-[12%]"></div>
+               <div class="absolute w-[10%] h-[10%] bg-[#ccd6dd] rounded-full top-[25%] left-[50%]"></div>
+             </div>
+             
+          </div>
+        </button>
       </div>
-    </section>
+      
+    </div>
+  </section>
 
-    <!-- 2. About & Methodology Section -->
-    <section id="about-methodology" class="w-full mt-12 sm:mt-24 mb-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-500">
+  <!-- 2. About & Methodology Section -->
+  <section id="about-methodology" class="w-full mt-12 sm:mt-24 mb-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-500">
+      
+      <!-- Section Header -->
+      <div class="space-y-6 mb-12 sm:mb-16">
+        <!-- Animated Status Dot (Yellow in Day, Blue in Night) -->
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)] dark:bg-[#004aad] dark:shadow-[0_0_8px_rgba(0,74,173,0.8)] transition-all duration-500"></span>
+          <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500">About & Approach</span>
+        </div>
         
-        <!-- Section Header -->
-        <div class="space-y-6 mb-12 sm:mb-16">
-          <!-- Animated Status Dot (Yellow in Day, Blue in Night) -->
-          <div class="flex items-center gap-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)] dark:bg-[#004aad] dark:shadow-[0_0_8px_rgba(0,74,173,0.8)] transition-all duration-500"></span>
-            <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500">About & Approach</span>
+        <!-- Interactive About Text (Responsive sizing for all devices) -->
+        <p class="text-[1.35rem] sm:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight text-[#000000] dark:text-[#ffffff] transition-colors duration-500 max-w-5xl">
+          I am currently a Product Owner at IOSH, with a passion for building 
+          <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
+            human-centred solutions
+            <!-- Underline (Yellow in Day, Blue in Night) -->
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] sm:h-[4px] bg-[#ffbd59] dark:bg-[#004aad] transition-all duration-500 ease-out group-hover:w-full"></span>
+          </span>. 
+          With a background spanning technical architecture and human-product interaction, I bridge the gap between 
+          <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
+            complex engineering
+            <!-- Underline (Yellow in Day, Blue in Night) -->
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] sm:h-[4px] bg-[#ffbd59] dark:bg-[#004aad] transition-all duration-500 ease-out group-hover:w-full"></span>
+          </span> 
+          and intuitive design.
+          <span class="text-[#545454] dark:text-[#ababab] block mt-6 text-lg sm:text-2xl lg:text-3xl leading-relaxed transition-colors duration-500">
+            My work focuses on creating scalable hardware and digital products while maintaining an unwavering commitment to craft and aesthetic minimalism.
+          </span>
+        </p>
+      </div>
+
+      <!-- The 3-Step Interactive Cards Grid (1 col mobile, 3 cols tablet/desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
+        
+        <!-- Step 1 -->
+        <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <!-- Animated Background Glow (Yellow in Day, Blue in Night) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <!-- Badge turns Yellow in Day, Blue in Night on hover -->
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">01</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Human Insight</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
+              Uncovering latent user frictions and operational bottlenecks through deep contextual inquiry.
+            </p>
           </div>
           
-          <!-- Interactive About Text (Responsive sizing for all devices) -->
-          <p class="text-[1.35rem] sm:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight text-[#000000] dark:text-[#ffffff] transition-colors duration-500 max-w-5xl">
-            I am currently a Product Owner at IOSH, with a passion for building 
-            <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
-              human-centred solutions
-              <!-- Underline (Yellow in Day, Blue in Night) -->
-              <span class="absolute bottom-0 left-0 w-0 h-[3px] sm:h-[4px] bg-[#ffbd59] dark:bg-[#004aad] transition-all duration-500 ease-out group-hover:w-full"></span>
-            </span>. 
-            With a background spanning technical architecture and human-product interaction, I bridge the gap between 
-            <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
-              complex engineering
-              <!-- Underline (Yellow in Day, Blue in Night) -->
-              <span class="absolute bottom-0 left-0 w-0 h-[3px] sm:h-[4px] bg-[#ffbd59] dark:bg-[#004aad] transition-all duration-500 ease-out group-hover:w-full"></span>
-            </span> 
-            and intuitive design.
-            <span class="text-[#545454] dark:text-[#ababab] block mt-6 text-lg sm:text-2xl lg:text-3xl leading-relaxed transition-colors duration-500">
-              My work focuses on creating scalable hardware and digital products while maintaining an unwavering commitment to craft and aesthetic minimalism.
-            </span>
-          </p>
+          <!-- Slide-in Arrow (Yellow in Day, Blue in Night) -->
+          <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">02</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Product Decision</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
+              Prioritising trade-offs by business value, feasibility, and long-term architectural scaling.
+            </p>
+          </div>
+          
+          <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">03</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Business Outcome</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
+              Validating execution through measurable enterprise metrics and continuous delivery cycles.
+            </p>
+          </div>
+          
+          <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </div>
         </div>
 
-        <!-- The 3-Step Interactive Cards Grid (1 col mobile, 3 cols tablet/desktop) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
-          
-          <!-- Step 1 -->
-          <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
-            <!-- Animated Background Glow (Yellow in Day, Blue in Night) -->
-            <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            
-            <div class="relative z-10">
-              <!-- Badge turns Yellow in Day, Blue in Night on hover -->
-              <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">01</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Human Insight</h3>
-              <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
-                Uncovering latent user frictions and operational bottlenecks through deep contextual inquiry.
-              </p>
-            </div>
-            
-            <!-- Slide-in Arrow (Yellow in Day, Blue in Night) -->
-            <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </div>
-          </div>
-          
-          <!-- Step 2 -->
-          <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            
-            <div class="relative z-10">
-              <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">02</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Product Decision</h3>
-              <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
-                Prioritising trade-offs by business value, feasibility, and long-term architectural scaling.
-              </p>
-            </div>
-            
-            <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </div>
-          </div>
-          
-          <!-- Step 3 -->
-          <div class="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/15 dark:from-[#004aad]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            
-            <div class="relative z-10">
-              <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-5 sm:mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black dark:group-hover:bg-[#004aad] dark:group-hover:border-[#004aad] dark:group-hover:text-white group-hover:scale-110 origin-left">03</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#ffbd59] dark:group-hover:text-[#004aad]">Business Outcome</h3>
-              <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
-                Validating execution through measurable enterprise metrics and continuous delivery cycles.
-              </p>
-            </div>
-            
-            <div class="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59] dark:text-[#004aad]">
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      </div>
+  </section>
 
     <!-- 3. Case Studies Section -->
     <section id="case-studies">
