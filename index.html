@@ -79,8 +79,10 @@
   </header>
 
   <!-- Main Layout Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-20 space-y-32">
-    
+    <main class="w-fit mx-auto px-6 sm:px-12 pb-20 space-y-32">
+      
+      
+
   <!-- 1. Hero Section: Exact W-16/24/32 Toggle & Scaled Typography -->
     <section id="hero" class="min-h-[85vh] w-full flex flex-col justify-center items-start pt-16 sm:pt-24">
       
@@ -139,54 +141,87 @@
     </section>
 
     <!-- 2. About & Methodology Section -->
-    <section id="about-methodology">
+    <section id="about-methodology" class="w-full">
       
       <!-- Section Header -->
-      <div class="space-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab]">// ABOUT and APPROACH</span>
+      <div class="space-y-6 mb-12">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)]"></span>
+          <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab]">About & Approach</span>
+        </div>
         
-        <!-- Combined About Text -->
-        <p class="text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed tracking-tight text-[#000000] dark:text-[#ffffff] max-w-4xl">
-          I am currently a Product Owner at IOSH, with a passion for building human-centred solutions. With a background spanning technical architecture and human-product interaction, I bridge the gap between complex engineering and intuitive design. 
-          <span class="text-[#545454] dark:text-[#ababab] block mt-4">
+        <!-- Interactive About Text -->
+        <p class="text-[1.35rem] sm:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight text-[#000000] dark:text-[#ffffff] max-w-5xl">
+          I am currently a Product Owner at IOSH, with a passion for building 
+          <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
+            human-centred solutions
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ffbd59] transition-all duration-500 ease-out group-hover:w-full"></span>
+          </span>. 
+          With a background spanning technical architecture and human-product interaction, I bridge the gap between 
+          <span class="group relative inline-block cursor-default text-[#545454] dark:text-[#ababab] hover:text-[#000000] dark:hover:text-[#ffffff] transition-colors duration-300">
+            complex engineering
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ffbd59] transition-all duration-500 ease-out group-hover:w-full"></span>
+          </span> 
+          and intuitive design.
+          <span class="text-[#545454] dark:text-[#ababab] block mt-6 text-lg sm:text-xl lg:text-2xl leading-relaxed">
             My work focuses on creating scalable hardware and digital products while maintaining an unwavering commitment to craft and aesthetic minimalism.
           </span>
         </p>
       </div>
 
-      <!-- The 3-Step Methodology Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- The 3-Step Interactive Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
         
         <!-- Step 1 -->
-        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-[#141414]/50 transition-colors">
-          <div class="space-y-4">
-            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700">01</span>
-            <h3 class="text-lg font-bold text-[#000000] dark:text-[#ffffff]">Human Insight</h3>
-            <p class="text-sm text-[#545454] dark:text-[#ababab] leading-relaxed">
+        <div class="group relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <!-- Animated Background Glow -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#72cbff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none dark:from-[#004aad]/20"></div>
+          
+          <div class="relative z-10">
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black group-hover:scale-110 origin-left">01</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-3 transition-colors duration-300 group-hover:text-[#ffbd59]">Human Insight</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
               Uncovering latent user frictions and operational bottlenecks through deep contextual inquiry.
             </p>
+          </div>
+          
+          <!-- Slide-in Arrow -->
+          <div class="absolute bottom-8 right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </div>
         </div>
         
         <!-- Step 2 -->
-        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-[#141414]/50 transition-colors">
-          <div class="space-y-4">
-            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700">02</span>
-            <h3 class="text-lg font-bold text-[#000000] dark:text-[#ffffff]">Product Decision</h3>
-            <p class="text-sm text-[#545454] dark:text-[#ababab] leading-relaxed">
+        <div class="group relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#72cbff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none dark:from-[#004aad]/20"></div>
+          
+          <div class="relative z-10">
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black group-hover:scale-110 origin-left">02</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-3 transition-colors duration-300 group-hover:text-[#ffbd59]">Product Decision</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
               Prioritising trade-offs by business value, feasibility, and long-term architectural scaling.
             </p>
+          </div>
+          
+          <div class="absolute bottom-8 right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </div>
         </div>
         
         <!-- Step 3 -->
-        <div class="flex flex-col justify-between p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-[#141414]/50 transition-colors">
-          <div class="space-y-4">
-            <span class="font-mono text-xs font-semibold px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700">03</span>
-            <h3 class="text-lg font-bold text-[#000000] dark:text-[#ffffff]">Business Outcome</h3>
-            <p class="text-sm text-[#545454] dark:text-[#ababab] leading-relaxed">
+        <div class="group relative flex flex-col justify-between p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141414] overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#72cbff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none dark:from-[#004aad]/20"></div>
+          
+          <div class="relative z-10">
+            <span class="inline-block font-mono text-xs font-bold px-3 py-1.5 mb-6 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-[#000000] dark:text-[#ffffff] border border-neutral-200 dark:border-neutral-700 transition-all duration-300 group-hover:bg-[#ffbd59] group-hover:border-[#ffbd59] group-hover:text-black group-hover:scale-110 origin-left">03</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#000000] dark:text-[#ffffff] mb-3 transition-colors duration-300 group-hover:text-[#ffbd59]">Business Outcome</h3>
+            <p class="text-sm sm:text-base text-[#545454] dark:text-[#ababab] leading-relaxed transition-colors duration-300 group-hover:text-[#000000] dark:group-hover:text-[#d9d9d9]">
               Validating execution through measurable enterprise metrics and continuous delivery cycles.
             </p>
+          </div>
+          
+          <div class="absolute bottom-8 right-8 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[#ffbd59]">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </div>
         </div>
 
