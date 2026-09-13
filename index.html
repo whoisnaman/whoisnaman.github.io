@@ -598,21 +598,22 @@
     // 4. Horizontal Scroll Engine for Projects
     const projectWrapper = document.getElementById('project-scroll-wrapper');
     const projectTrack = document.getElementById('project-cards-track');
+    const stickyView = document.getElementById('project-sticky-view');
 
-    if (projectWrapper && projectTrack) {
+    if (projectWrapper && projectTrack && stickyView) {
       window.addEventListener('scroll', () => {
         const rect = projectWrapper.getBoundingClientRect();
         
-        // Check if the top of the wrapper has reached the top of the viewport
         if (rect.top <= 0) {
           const maxVerticalScroll = projectWrapper.offsetHeight - window.innerHeight;
           const scrolledDistance = -rect.top;
           
           let progress = scrolledDistance / maxVerticalScroll;
-          progress = Math.max(0, Math.min(1, progress)); // Lock between 0 and 1
+          progress = Math.max(0, Math.min(1, progress)); 
           
-          // Calculate how far left the track needs to move
-          const maxHorizontalTranslate = projectTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.15);
+          // Use the strict container width, not the whole window
+          const viewWidth = stickyView.offsetWidth;
+          const maxHorizontalTranslate = projectTrack.scrollWidth - viewWidth + (viewWidth * 0.15);
           
           projectTrack.style.transform = `translateX(-${progress * maxHorizontalTranslate}px)`;
         } else {
