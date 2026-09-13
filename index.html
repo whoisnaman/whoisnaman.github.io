@@ -387,7 +387,7 @@
         </div>
       </section>
 
-    <!-- 4. Projects & Tangible Deliverables (Horizontal Scroll) -->
+    <!-- 4. Projects & Tangible Deliverables -->
       <section id="projects" class="w-full relative mt-12 sm:mt-24 mb-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-500 z-20">
         
         <!-- Section Header -->
@@ -399,26 +399,22 @@
           <h2 class="text-[2rem] sm:text-[3rem] lg:text-[4rem] font-bold tracking-tight text-[#000000] dark:text-[#ffffff] leading-[1.05]">Projects & Hardware</h2>
         </div>
 
-        <!-- Horizontal Scroll Wrapper -->
-        <div id="project-scroll-wrapper" class="relative w-full h-[300vh]">
+        <!-- Horizontal Scroll Wrapper (max-w-full added for safety) -->
+        <div id="project-scroll-wrapper" class="relative w-full max-w-full h-[300vh]">
           
           <!-- Sticky Viewport -->
-          <div id="project-sticky-view" class="sticky top-0 w-full h-[80vh] flex flex-col justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+          <div id="project-sticky-view" class="sticky top-0 w-full max-w-full h-[80vh] flex flex-col justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
             
-            <!-- Cards Track -->
-            <div id="project-cards-track" class="flex gap-8 sm:gap-12 px-[10vw] md:px-[25vw] w-max will-change-transform">
+            <!-- Cards Track (Removed vw padding) -->
+            <div id="project-cards-track" class="flex gap-8 sm:gap-12 px-[10%] w-max will-change-transform">
               
               <!-- Project 1: Walking Stick -->
-              <div class="relative w-[75vw] sm:w-[40vh] min-w-[280px] max-w-[450px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/walkingstick.png" alt="Self-Levelling Walking Stick" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                
-                <!-- Overlay -->
                 <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight leading-tight">Self-Levelling Walking Stick</h3>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">Self-Levelling Walking Stick</h3>
                   <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Patented</p>
-                  
                   <hr class="border-white/20 mb-4 w-full">
-                  
                   <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">CAD</span>
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">PLA 3D Printing</span>
@@ -427,16 +423,12 @@
               </div>
 
               <!-- Project 2: DARPAN -->
-              <div class="relative w-[75vw] sm:w-[40vh] min-w-[280px] max-w-[450px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/darpan.png" alt="DARPAN by Usha" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                
-                <!-- Overlay -->
                 <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight leading-tight">DARPAN by Usha</h3>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">DARPAN by Usha</h3>
                   <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Production</p>
-                  
                   <hr class="border-white/20 mb-4 w-full">
-                  
                   <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">HTML/CSS/JS</span>
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Cloudflare</span>
@@ -445,16 +437,12 @@
               </div>
 
               <!-- Project 3: VBA -->
-              <div class="relative w-[75vw] sm:w-[40vh] min-w-[280px] max-w-[450px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/vba.png" alt="VBA Resume Automation" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                
-                <!-- Overlay -->
                 <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight leading-tight">VBA Resume Automation</h3>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">VBA Resume Automation</h3>
                   <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Tooling</p>
-                  
                   <hr class="border-white/20 mb-4 w-full">
-                  
                   <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Word VBA</span>
                     <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Automation</span>
