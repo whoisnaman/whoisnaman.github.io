@@ -240,29 +240,25 @@
   </section>
 
     <!-- 3. Case Studies Section -->
-      <!-- Added border-t and pt-12 to match the About section divider -->
       <section id="case-studies" class="w-full relative mt-12 sm:mt-24 mb-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-500 z-20">
         
-        <!-- Section Header (Reduced bottom margin for tighter gap) -->
-        <div class="space-y-6 mb-4 sm:mb-6">
+        <!-- STICKY Section Header -->
+        <div class="sticky top-16 z-50 space-y-6 mb-12 sm:mb-16 pointer-events-none">
           <div class="flex items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)] dark:bg-[#004aad] dark:shadow-[0_0_8px_rgba(0,74,173,0.8)] transition-all duration-500"></span>
-            <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500">Case Studies</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500 bg-white/50 dark:bg-[#141414]/50 backdrop-blur-md px-2 py-1 rounded-md">Case Studies</span>
           </div>
         </div>
 
         <!-- The 3D Scroll Stacking Container -->
-        <div class="relative w-full" id="stack-container">
+        <div class="relative w-full max-w-full" id="stack-container">
           
           <!-- Case Study 01: Patent -->
           <div class="sticky-wrapper sticky top-0 h-screen w-full flex items-center justify-center [perspective:1000px]">
-            <!-- Reduced height to h-[65vh] sm:h-[70vh] -->
-            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 0; top: calc(var(--card-index) * 12px);">
-              
+            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] max-w-full min-w-0 rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 0; top: calc(var(--card-index) * 12px);">
               <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/5 dark:from-[#004aad]/10 to-transparent pointer-events-none"></div>
 
-              <!-- Text Content -->
-              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full">
+              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full min-w-0">
                   <div class="space-y-4">
                       <div class="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-widest text-[#545454] dark:text-[#ababab]">
                           <span>2021</span><span class="text-[#ffbd59] dark:text-[#004aad]">•</span><span>Patent</span>
@@ -274,17 +270,15 @@
                       </div>
                   </div>
                   <div class="mt-4 sm:mt-6">
-                      <a href="https://search.ipindia.gov.in/DesignSearch/" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base">
-                          View Patent
+                      <a href="#" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                          View Case Study
                           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                       </a>
                   </div>
               </div>
 
-              <!-- Dynamic Auto-Fit Image Frame -->
-              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end">
-                  <!-- w-fit h-fit forces the frame to mathematically hug the image boundaries -->
-                  <div class="w-fit h-fit max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
+              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end min-w-0 pointer-events-none">
+                  <div class="w-fit h-fit max-w-full max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
                       <img src="images/walkingstick.png" alt="Self Leveling Walking Stick" class="w-auto h-auto max-w-full max-h-[25vh] md:max-h-[50vh] object-contain p-3 sm:p-5 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105">
                   </div>
               </div>
@@ -293,10 +287,10 @@
 
           <!-- Case Study 02: E-Commerce -->
           <div class="sticky-wrapper sticky top-0 h-screen w-full flex items-center justify-center [perspective:1000px]">
-            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 1; top: calc(var(--card-index) * 12px);">
+            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] max-w-full min-w-0 rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 1; top: calc(var(--card-index) * 12px);">
               <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/5 dark:from-[#004aad]/10 to-transparent pointer-events-none"></div>
               
-              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full">
+              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full min-w-0">
                   <div class="space-y-4">
                       <div class="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-widest text-[#545454] dark:text-[#ababab]">
                           <span>2024</span><span class="text-[#ffbd59] dark:text-[#004aad]">•</span><span>E-commerce</span>
@@ -308,14 +302,14 @@
                       </div>
                   </div>
                   <div class="mt-4 sm:mt-6">
-                      <a href="https://dukaanji.com/" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base">
-                          View Store
+                      <a href="#" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                          View Case Study
                           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                       </a>
                   </div>
               </div>
-              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end">
-                  <div class="w-fit h-fit max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
+              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end min-w-0 pointer-events-none">
+                  <div class="w-fit h-fit max-w-full max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
                       <img src="images/dukaanji.png" alt="Dukaanji" class="w-auto h-auto max-w-full max-h-[25vh] md:max-h-[50vh] object-contain p-3 sm:p-5 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105">
                   </div>
               </div>
@@ -324,10 +318,10 @@
 
           <!-- Case Study 03: 3D Printing -->
           <div class="sticky-wrapper sticky top-0 h-screen w-full flex items-center justify-center [perspective:1000px]">
-            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 2; top: calc(var(--card-index) * 12px);">
+            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] max-w-full min-w-0 rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 2; top: calc(var(--card-index) * 12px);">
               <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/5 dark:from-[#004aad]/10 to-transparent pointer-events-none"></div>
               
-              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full">
+              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full min-w-0">
                   <div class="space-y-4">
                       <div class="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-widest text-[#545454] dark:text-[#ababab]">
                           <span>2025</span><span class="text-[#ffbd59] dark:text-[#004aad]">•</span><span>3D Printing</span>
@@ -339,14 +333,14 @@
                       </div>
                   </div>
                   <div class="mt-4 sm:mt-6">
-                      <a href="https://makerworld.com/en/@iprint247" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base">
-                          View Designs
+                      <a href="#" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                          View Case Study
                           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                       </a>
                   </div>
               </div>
-              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end">
-                  <div class="w-fit h-fit max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
+              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end min-w-0 pointer-events-none">
+                  <div class="w-fit h-fit max-w-full max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
                       <img src="images/designerd.png" alt="DesigNerd" class="w-auto h-auto max-w-full max-h-[25vh] md:max-h-[50vh] object-contain p-3 sm:p-5 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105">
                   </div>
               </div>
@@ -355,10 +349,10 @@
 
           <!-- Case Study 04: Couture -->
           <div class="sticky-wrapper sticky top-0 h-screen w-full flex items-center justify-center [perspective:1000px]">
-            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 3; top: calc(var(--card-index) * 12px);">
+            <div class="perfect-glass-card relative w-full h-[65vh] sm:h-[70vh] max-w-full min-w-0 rounded-[2rem] p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-12 bg-white/70 dark:bg-[#141414]/70 backdrop-blur-3xl border border-neutral-200 dark:border-neutral-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] origin-top transition-colors duration-500 overflow-hidden will-change-transform" style="--card-index: 3; top: calc(var(--card-index) * 12px);">
               <div class="absolute inset-0 bg-gradient-to-br from-[#ffbd59]/5 dark:from-[#004aad]/10 to-transparent pointer-events-none"></div>
               
-              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full">
+              <div class="relative z-10 flex flex-col justify-between w-full md:w-1/2 lg:w-5/12 h-full min-w-0">
                   <div class="space-y-4">
                       <div class="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-widest text-[#545454] dark:text-[#ababab]">
                           <span>2026</span><span class="text-[#ffbd59] dark:text-[#004aad]">•</span><span>Bespoke Couture</span>
@@ -370,14 +364,14 @@
                       </div>
                   </div>
                   <div class="mt-4 sm:mt-6">
-                      <a href="https://darpanbyusha.com/" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base">
-                          View Couture
+                      <a href="#" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-6 py-3 bg-[#000000] dark:bg-[#ffffff] text-white dark:text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                          View Case Study
                           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                       </a>
                   </div>
               </div>
-              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end">
-                  <div class="w-fit h-fit max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
+              <div class="relative z-10 w-full md:w-1/2 lg:w-7/12 h-full flex items-center justify-center md:justify-end min-w-0 pointer-events-none">
+                  <div class="w-fit h-fit max-w-full max-h-full rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/40 dark:bg-[#000000]/20 shadow-inner group flex items-center justify-center">
                       <img src="images/darpan.png" alt="DARPAN BY USHA" class="w-auto h-auto max-w-full max-h-[25vh] md:max-h-[50vh] object-contain p-3 sm:p-5 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105">
                   </div>
               </div>
@@ -387,65 +381,97 @@
         </div>
       </section>
 
-    <!-- 4. Projects & Tangible Deliverables -->
+      <!-- 4. Projects & Tangible Deliverables -->
       <section id="projects" class="w-full relative mt-12 sm:mt-24 mb-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-500 z-20">
         
-        <!-- Section Header -->
-        <div class="space-y-6 mb-8 sm:mb-12">
-          <div class="flex items-center gap-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)] dark:bg-[#004aad] dark:shadow-[0_0_8px_rgba(0,74,173,0.8)] transition-all duration-500"></span>
-            <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500">Tangible Deliverables</span>
+        <!-- STICKY Section Header -->
+        <div class="sticky top-16 z-50 space-y-6 mb-12 sm:mb-16 pointer-events-none">
+          <div class="flex flex-col gap-3 items-start">
+            <div class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd59] shadow-[0_0_8px_rgba(255,189,89,0.8)] dark:bg-[#004aad] dark:shadow-[0_0_8px_rgba(0,74,173,0.8)] transition-all duration-500"></span>
+              <span class="font-mono text-xs uppercase tracking-widest text-[#545454] dark:text-[#ababab] transition-colors duration-500 bg-white/50 dark:bg-[#141414]/50 backdrop-blur-md px-2 py-1 rounded-md">Tangible Deliverables</span>
+            </div>
+            <h2 class="text-[2rem] sm:text-[3rem] lg:text-[4rem] font-bold tracking-tight text-[#000000] dark:text-[#ffffff] leading-[1.05] drop-shadow-md">Projects & Hardware</h2>
           </div>
-          <h2 class="text-[2rem] sm:text-[3rem] lg:text-[4rem] font-bold tracking-tight text-[#000000] dark:text-[#ffffff] leading-[1.05]">Projects & Hardware</h2>
         </div>
 
-        <!-- Horizontal Scroll Wrapper (max-w-full added for safety) -->
+        <!-- Horizontal Scroll Wrapper -->
         <div id="project-scroll-wrapper" class="relative w-full max-w-full h-[300vh]">
           
           <!-- Sticky Viewport -->
-          <div id="project-sticky-view" class="sticky top-0 w-full max-w-full h-[80vh] flex flex-col justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+          <div id="project-sticky-view" class="sticky top-0 w-full max-w-full h-[80vh] flex flex-col justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]">
             
-            <!-- Cards Track (Removed vw padding) -->
-            <div id="project-cards-track" class="flex gap-8 sm:gap-12 px-[10%] w-max will-change-transform">
+            <!-- Cards Track (Padding mathematically forces extreme right-to-left sweep) -->
+            <div id="project-cards-track" class="flex gap-8 sm:gap-12 w-max will-change-transform" style="padding-left: 100%; padding-right: 100%;">
               
               <!-- Project 1: Walking Stick -->
-              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[320px] sm:w-[450px] lg:w-[550px] aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-2xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/walkingstick.png" alt="Self-Levelling Walking Stick" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">Self-Levelling Walking Stick</h3>
-                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Patented</p>
-                  <hr class="border-white/20 mb-4 w-full">
-                  <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">CAD</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">PLA 3D Printing</span>
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-10">
+                  
+                  <h3 class="text-2xl sm:text-4xl font-bold text-white mb-2 tracking-tight leading-tight">Self-Levelling<br/>Walking Stick</h3>
+                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-6">Patented Hardware</p>
+                  
+                  <hr class="border-white/20 mb-6 w-full">
+                  
+                  <div class="flex flex-col gap-6">
+                    <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[12px]">
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">CAD</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">PLA 3D Printing</span>
+                    </div>
+                    
+                    <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                        View Project
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
                   </div>
                 </div>
               </div>
 
               <!-- Project 2: DARPAN -->
-              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[320px] sm:w-[450px] lg:w-[550px] aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-2xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/darpan.png" alt="DARPAN by Usha" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">DARPAN by Usha</h3>
-                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Production</p>
-                  <hr class="border-white/20 mb-4 w-full">
-                  <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">HTML/CSS/JS</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Cloudflare</span>
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-10">
+                  
+                  <h3 class="text-2xl sm:text-4xl font-bold text-white mb-2 tracking-tight leading-tight">DARPAN<br/>by Usha</h3>
+                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-6">Production Build</p>
+                  
+                  <hr class="border-white/20 mb-6 w-full">
+                  
+                  <div class="flex flex-col gap-6">
+                    <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[12px]">
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">HTML/CSS/JS</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Cloudflare</span>
+                    </div>
+                    
+                    <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                        View Project
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
                   </div>
                 </div>
               </div>
 
               <!-- Project 3: VBA -->
-              <div class="relative w-[300px] sm:w-[350px] lg:w-[400px] aspect-square rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-xl dark:shadow-none bg-white dark:bg-[#141414]">
+              <div class="relative w-[320px] sm:w-[450px] lg:w-[550px] aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-neutral-200 dark:border-neutral-800 shrink-0 group shadow-2xl dark:shadow-none bg-white dark:bg-[#141414]">
                 <img src="images/vba.png" alt="VBA Resume Automation" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight leading-tight">VBA Resume Automation</h3>
-                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-4">Tooling</p>
-                  <hr class="border-white/20 mb-4 w-full">
-                  <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[11px]">
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Word VBA</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Automation</span>
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-6 sm:p-10">
+                  
+                  <h3 class="text-2xl sm:text-4xl font-bold text-white mb-2 tracking-tight leading-tight">VBA Resume<br/>Automation</h3>
+                  <p class="text-xs sm:text-sm font-mono text-neutral-300 uppercase tracking-widest mb-6">Workflow Tooling</p>
+                  
+                  <hr class="border-white/20 mb-6 w-full">
+                  
+                  <div class="flex flex-col gap-6">
+                    <div class="flex flex-wrap gap-2 font-mono text-[10px] sm:text-[12px]">
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Word VBA</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-white/20 text-white backdrop-blur-md border border-white/10">Automation</span>
+                    </div>
+                    
+                    <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-[#ffbd59] dark:hover:bg-[#004aad] hover:text-black dark:hover:text-white transition-all duration-300 w-fit text-sm sm:text-base pointer-events-auto">
+                        View Project
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -583,7 +609,7 @@
         });
       });
     }
-    // 4. Horizontal Scroll Engine for Projects
+    // 4. Horizontal Scroll Engine for Projects (Extreme Full Sweep)
     const projectWrapper = document.getElementById('project-scroll-wrapper');
     const projectTrack = document.getElementById('project-cards-track');
     const stickyView = document.getElementById('project-sticky-view');
@@ -599,9 +625,9 @@
           let progress = scrolledDistance / maxVerticalScroll;
           progress = Math.max(0, Math.min(1, progress)); 
           
-          // Use the strict container width, not the whole window
-          const viewWidth = stickyView.offsetWidth;
-          const maxHorizontalTranslate = projectTrack.scrollWidth - viewWidth + (viewWidth * 0.15);
+          // Because of padding-left: 100%, the track is massive. 
+          // We translate it by its total scrollable width to sweep entirely across the screen.
+          const maxHorizontalTranslate = projectTrack.scrollWidth - stickyView.offsetWidth;
           
           projectTrack.style.transform = `translateX(-${progress * maxHorizontalTranslate}px)`;
         } else {
